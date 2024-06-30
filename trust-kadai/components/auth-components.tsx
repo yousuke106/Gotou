@@ -3,12 +3,14 @@ import { Button } from "./ui/button";
 import { signIn, signOut } from "@/auth";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { PathnameContext } from "next/dist/shared/lib/hooks-client-context.shared-runtime";
 
 export function SignIn({
   provider,
+  callbackUrl,
   ...props
-}: { provider?: string } & React.ComponentPropsWithRef<typeof Button>) {
+}: { provider?: string; callbackUrl?: string } & React.ComponentPropsWithRef<
+  typeof Button
+>) {
   return (
     <form
       action={async () => {

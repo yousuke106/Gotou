@@ -54,7 +54,7 @@ export default function SignInPage() {
               Login
             </Button>
             <div>
-              <SignIn provider="github" />
+              <SignIn provider="github" callbackUrl="http://localhost:3000" />
             </div>
           </div>
           <div className="mt-4 text-center text-sm">

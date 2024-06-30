@@ -14,12 +14,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { auth } from "@/auth";
-import { SignIn } from "@/components/auth-components";
 import { MountainIcon } from "@/components/header";
+import { useState } from "react";
 
 export default async function SignUpPage() {
-  const session = await auth();
   return (
     <div className="mt-5">
       <div className="flex justify-center mb-6">
