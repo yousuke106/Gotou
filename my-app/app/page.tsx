@@ -65,8 +65,16 @@ export default async function Home() {
 
       <main className="flex flex-wrap justify-center items-center md:mt-16 mt-10">
         <h2 className="text-center w-full font-bold text-3xl mb-2">猫缶一覧</h2>
-        {product.map((product: ProductType) => (
-          <Product key={product.id} book={product} />
+        {product.map((product) => (
+          <Product
+            key={product.id}
+            product={{
+              ...product,
+              // created_atとupdated_atをcreatedAtとupdatedAtに変換
+              createdAt: product.created_at,
+              updatedAt: product.updated_at,
+            }}
+          />
         ))}
       </main>
     </>
